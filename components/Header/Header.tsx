@@ -5,7 +5,6 @@ import styles from './Header.module.scss';
 export function Header() {
   return (
     <header className={styles.header}>
-      <div className={styles.greenBar} />
       <div className={styles.headerContainer}>
         <div className={styles.container}>
           <nav className={styles.navbar}>

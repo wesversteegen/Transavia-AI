@@ -1,0 +1,117 @@
+.mapContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.map {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.region {
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible .regionPath {
+    stroke: var(--color-neutral-900);
+    stroke-width: 3;
+  }
+}
+
+.regionPath {
+  fill: var(--color-neutral-200);
+  stroke: var(--color-neutral-400);
+  stroke-width: 1.5;
+  transition: all 0.2s ease;
+
+  .region:hover & {
+    fill: var(--color-neutral-300);
+    stroke: var(--color-neutral-600);
+  }
+
+  .region.selected & {
+    fill: var(--color-green-100);
+    stroke: var(--color-brand-green);
+    stroke-width: 2;
+  }
+
+  .region.selected:hover & {
+    fill: var(--color-green-100);
+    stroke: var(--color-green-600);
+  }
+}
+
+.regionLabel {
+  font-size: 11px;
+  font-weight: 600;
+  fill: var(--color-text-secondary);
+  text-anchor: middle;
+  pointer-events: none;
+  user-select: none;
+
+  .region.selected & {
+    fill: var(--color-green-700);
+  }
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  padding-top: var(--spacing-sm);
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  background: var(--color-surface);
+  border: 1px solid var(--color-neutral-300);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all 0.15s ease;
+
+  &:hover {
+    border-color: var(--color-neutral-500);
+    background: var(--color-neutral-100);
+  }
+
+  &.selected {
+    border-color: var(--color-brand-green);
+    background: var(--color-green-50);
+    color: var(--color-green-700);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-neutral-900);
+    outline-offset: 2px;
+  }
+}
+
+.legendDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-neutral-400);
+  transition: background 0.15s ease;
+
+  .legendItem.selected & {
+    background: var(--color-brand-green);
+  }
+}
+
+.legendText {
+  white-space: nowrap;
+}

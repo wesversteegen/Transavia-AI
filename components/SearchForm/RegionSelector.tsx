@@ -2,6 +2,7 @@
 
 import { regions } from '@/data/mockData';
 import { RegionCluster } from '@/types';
+import { EuropeMap } from './EuropeMap';
 import styles from './RegionSelector.module.scss';
 
 interface RegionSelectorProps {
@@ -39,23 +40,7 @@ export function RegionSelector({ selected, onChange }: RegionSelectorProps) {
         </button>
       </div>
 
-      <div className={styles.regions}>
-        {regions.map((region) => (
-          <button
-            key={region.id}
-            type="button"
-            className={`${styles.region} ${selected.includes(region.id) ? styles.selected : ''}`}
-            onClick={() => handleToggle(region.id)}
-            aria-pressed={selected.includes(region.id)}
-          >
-            <span className={styles.regionName}>{region.name}</span>
-            <span className={styles.countries}>
-              {region.countries.slice(0, 3).join(', ')}
-              {region.countries.length > 3 && ` +${region.countries.length - 3}`}
-            </span>
-          </button>
-        ))}
-      </div>
+      <EuropeMap selected={selected} onToggle={handleToggle} />
     </div>
   );
 }
