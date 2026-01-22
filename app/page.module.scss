@@ -5,7 +5,7 @@
 }
 
 .hero {
-  background: linear-gradient(135deg, var(--color-navy-500) 0%, var(--color-navy-600) 100%);
+  background: linear-gradient(135deg, var(--color-brand-green) 0%, #04b86c 100%);
   padding: var(--spacing-2xl) 0;
   text-align: center;
 
@@ -46,9 +46,11 @@
 
 .formWrapper {
   background-color: var(--color-surface);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
   padding: var(--spacing-lg);
   box-shadow: var(--shadow-md);
+  max-width: 640px;
+  margin: 0 auto;
 
   @media (min-width: 768px) {
     padding: var(--spacing-xl);

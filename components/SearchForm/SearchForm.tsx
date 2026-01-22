@@ -85,20 +85,18 @@ export function SearchForm({
         />
       </div>
 
-      <div className={styles.row}>
-        <div className={styles.section}>
-          <PartySelector
-            value={partySize}
-            onChange={handlePartyChange}
-          />
-        </div>
+      <div className={styles.section}>
+        <PartySelector
+          value={partySize}
+          onChange={handlePartyChange}
+        />
+      </div>
 
-        <div className={styles.section}>
-          <BudgetInput
-            value={filters.maxBudget}
-            onChange={handleBudgetChange}
-          />
-        </div>
+      <div className={styles.section}>
+        <BudgetInput
+          value={filters.maxBudget}
+          onChange={handleBudgetChange}
+        />
       </div>
 
       <div className={styles.section}>
