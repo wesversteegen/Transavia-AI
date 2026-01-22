@@ -1,0 +1,103 @@
+.partySelector {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.counters {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+
+  @media (min-width: 480px) {
+    flex-direction: row;
+    gap: var(--spacing-lg);
+  }
+}
+
+.counter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-md);
+  padding: var(--spacing-sm) 0;
+  border-bottom: 1px solid var(--color-border);
+
+  @media (min-width: 480px) {
+    flex-direction: column;
+    align-items: center;
+    border-bottom: none;
+    padding: 0;
+  }
+}
+
+.counterInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+
+  @media (min-width: 480px) {
+    align-items: center;
+    margin-bottom: var(--spacing-sm);
+  }
+}
+
+.counterLabel {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.counterSublabel {
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+}
+
+.counterControls {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+.counterButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid var(--color-border);
+  border-radius: 50%;
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  cursor: pointer;
+  transition: all 0.15s ease;
+
+  &:hover:not(:disabled) {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+}
+
+.counterValue {
+  font-size: 1.125rem;
+  font-weight: 600;
+  min-width: 24px;
+  text-align: center;
+  color: var(--color-text);
+}

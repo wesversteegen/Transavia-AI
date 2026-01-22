@@ -1,0 +1,118 @@
+.main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.headerContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-md) var(--spacing-md);
+  max-width: 1280px;
+  margin: 0 auto;
+
+  @media (min-width: 768px) {
+    padding: var(--spacing-md) var(--spacing-lg);
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-primary);
+
+  svg {
+    color: var(--color-primary);
+  }
+}
+
+.hero {
+  background: linear-gradient(135deg, var(--color-secondary) 0%, #2d3494 100%);
+  padding: var(--spacing-2xl) 0;
+  text-align: center;
+
+  @media (min-width: 768px) {
+    padding: calc(var(--spacing-2xl) * 1.5) 0;
+  }
+}
+
+.title {
+  color: white;
+  margin: 0 0 var(--spacing-md) 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.subtitle {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1rem;
+  margin: 0;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (min-width: 768px) {
+    font-size: 1.125rem;
+  }
+}
+
+.searchSection {
+  padding: var(--spacing-xl) 0;
+  background-color: var(--color-background);
+
+  @media (min-width: 768px) {
+    padding: var(--spacing-2xl) 0;
+  }
+}
+
+.formWrapper {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-xl);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-md);
+
+  @media (min-width: 768px) {
+    padding: var(--spacing-xl);
+  }
+
+  @media (min-width: 1024px) {
+    padding: var(--spacing-2xl);
+  }
+}
+
+.resultsSection {
+  padding: 0 0 var(--spacing-2xl) 0;
+  background-color: var(--color-background);
+  flex: 1;
+  scroll-margin-top: 80px;
+
+  @media (min-width: 768px) {
+    padding: 0 0 calc(var(--spacing-2xl) * 1.5) 0;
+  }
+}
+
+.footer {
+  background-color: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  padding: var(--spacing-lg) 0;
+  text-align: center;
+
+  p {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    margin: 0;
+  }
+}
