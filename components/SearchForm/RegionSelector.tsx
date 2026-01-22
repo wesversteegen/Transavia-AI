@@ -2,36 +2,45 @@
 
 import { regions } from '@/data/mockData';
 import { RegionCluster } from '@/types';
-import { ChipGroup, ChipOption } from '../ui/ChipGroup';
+import { EuropeMap } from './EuropeMap';
+import styles from './RegionSelector.module.scss';
 
 interface RegionSelectorProps {
   selected: RegionCluster[];
   onChange: (regions: RegionCluster[]) => void;
 }
 
-// Flag icons representing each region
-const regionIcons: Record<RegionCluster, string> = {
-  'western-europe': '🇫🇷',
-  'southern-europe': '🇪🇸',
-  'central-europe': '🇩🇪',
-  'nordic': '🇸🇪',
-  'eastern-europe': '🇵🇱',
-};
-
 export function RegionSelector({ selected, onChange }: RegionSelectorProps) {
-  const options: ChipOption[] = regions.map((region) => ({
-    value: region.id,
-    label: region.name,
-    icon: regionIcons[region.id],
-  }));
+  const handleToggle = (regionId: RegionCluster) => {
+    if (selected.includes(regionId)) {
+      onChange(selected.filter((r) => r !== regionId));
+    } else {
+      onChange([...selected, regionId]);
+    }
+  };
+
+  const handleSelectAll = () => {
+    if (selected.length === regions.length) {
+      onChange([]);
+    } else {
+      onChange(regions.map((r) => r.id));
+    }
+  };
 
   return (
-    <ChipGroup
-      label="Where do you want to go?"
-      options={options}
-      selected={selected}
-      onChange={(values) => onChange(values as RegionCluster[])}
-      multiSelect
-    />
+    <div className={styles.regionSelector}>
+      <div className={styles.header}>
+        <label className={styles.label}>Where do you want to go?</label>
+        <button
+          type="button"
+          className={styles.selectAll}
+          onClick={handleSelectAll}
+        >
+          {selected.length === regions.length ? 'Deselect all' : 'Select all'}
+        </button>
+      </div>
+
+      <EuropeMap selected={selected} onToggle={handleToggle} />
+    </div>
   );
 }

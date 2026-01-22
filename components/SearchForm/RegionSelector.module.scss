@@ -1,2 +1,40 @@
-// This file is kept for potential future styling overrides
-// Currently using ChipGroup component styles
+.regionSelector {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+.label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.selectAll {
+  font-size: 0.875rem;
+  color: var(--color-navy-500);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  transition: background-color 0.15s ease;
+  text-decoration: underline;
+
+  &:hover {
+    background-color: var(--color-navy-50);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-neutral-900);
+    outline-offset: 2px;
+  }
+}
