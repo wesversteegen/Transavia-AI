@@ -2,7 +2,6 @@
 
 import { useState, useRef } from 'react';
 import { Header } from '@/components/Header';
-import { HeroIllustration } from '@/components/HeroIllustration';
 import { SearchForm } from '@/components/SearchForm';
 import { ResultsGrid } from '@/components/Results';
 import { SearchFilters, Destination } from '@/types';
@@ -82,7 +81,6 @@ export default function Home() {
           <p className={styles.subtitle}>
             Tell us what you're looking for and we'll find the perfect destinations for your holiday
           </p>
-          <HeroIllustration />
         </div>
       </section>
 

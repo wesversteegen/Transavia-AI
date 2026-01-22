@@ -2,13 +2,20 @@
 
 import { regions } from '@/data/mockData';
 import { RegionCluster } from '@/types';
-import { EuropeMap } from './EuropeMap';
 import styles from './RegionSelector.module.scss';
 
 interface RegionSelectorProps {
   selected: RegionCluster[];
   onChange: (regions: RegionCluster[]) => void;
 }
+
+const regionIcons: Record<RegionCluster, string> = {
+  'western-europe': '🇫🇷',
+  'southern-europe': '🇪🇸',
+  'central-europe': '🇩🇪',
+  'nordic': '🇸🇪',
+  'eastern-europe': '🇵🇱',
+};
 
 export function RegionSelector({ selected, onChange }: RegionSelectorProps) {
   const handleToggle = (regionId: RegionCluster) => {
@@ -40,7 +47,24 @@ export function RegionSelector({ selected, onChange }: RegionSelectorProps) {
         </button>
       </div>
 
-      <EuropeMap selected={selected} onToggle={handleToggle} />
+      <div className={styles.regions}>
+        {regions.map((region) => (
+          <button
+            key={region.id}
+            type="button"
+            className={`${styles.region} ${selected.includes(region.id) ? styles.selected : ''}`}
+            onClick={() => handleToggle(region.id)}
+            aria-pressed={selected.includes(region.id)}
+          >
+            <span className={styles.regionIcon}>{regionIcons[region.id]}</span>
+            <span className={styles.regionName}>{region.name}</span>
+            <span className={styles.countries}>
+              {region.countries.slice(0, 3).join(', ')}
+              {region.countries.length > 3 && '...'}
+            </span>
+          </button>
+        ))}
+      </div>
     </div>
   );
 }

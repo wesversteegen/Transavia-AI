@@ -6,40 +6,43 @@
 
 .hero {
   position: relative;
-  background-color: var(--color-surface);
-  padding: var(--spacing-xl) 0 0 0;
+  background: linear-gradient(135deg, var(--color-brand-green) 0%, #00AB61 100%);
+  padding: var(--spacing-2xl) 0;
   text-align: center;
+  min-height: 280px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   @media (min-width: 768px) {
-    padding: var(--spacing-2xl) 0 0 0;
+    padding: calc(var(--spacing-2xl) * 2) 0;
+    min-height: 320px;
   }
 }
 
 .title {
-  color: var(--color-text);
-  margin: 0 0 var(--spacing-sm) 0;
+  color: white;
+  margin: 0 0 var(--spacing-md) 0;
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
   font-size: 1.75rem;
 
   @media (min-width: 768px) {
-    font-size: 2.25rem;
-    margin-bottom: var(--spacing-md);
+    font-size: 2.5rem;
   }
 }
 
 .subtitle {
-  color: var(--color-text-secondary);
+  color: rgba(255, 255, 255, 0.95);
   font-size: 1rem;
-  margin: 0 0 var(--spacing-lg) 0;
+  margin: 0;
   max-width: 500px;
   margin-left: auto;
   margin-right: auto;
 
   @media (min-width: 768px) {
     font-size: 1.125rem;
-    margin-bottom: var(--spacing-xl);
   }
 }
 
