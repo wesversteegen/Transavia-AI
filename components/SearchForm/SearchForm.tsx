@@ -4,7 +4,7 @@ import { SearchFilters, RegionCluster, TripType, PartySize } from '@/types';
 import { RegionSelector } from './RegionSelector';
 import { TripTypeSelector } from './TripTypeSelector';
 import { PartySelector } from './PartySelector';
-import { BudgetInput } from './BudgetInput';
+import { PriceRangeSlider } from './PriceRangeSlider';
 import { DateRangeSelector } from './DateRangeSelector';
 import styles from './SearchForm.module.scss';
 
@@ -38,8 +38,8 @@ export function SearchForm({
     });
   };
 
-  const handleBudgetChange = (maxBudget: number | null) => {
-    onFiltersChange({ ...filters, maxBudget });
+  const handlePriceRangeChange = (minBudget: number, maxBudget: number) => {
+    onFiltersChange({ ...filters, minBudget, maxBudget });
   };
 
   const handleDateModeChange = (dateMode: 'precise' | 'flexible') => {
@@ -93,9 +93,10 @@ export function SearchForm({
       </div>
 
       <div className={styles.section}>
-        <BudgetInput
-          value={filters.maxBudget}
-          onChange={handleBudgetChange}
+        <PriceRangeSlider
+          minValue={filters.minBudget}
+          maxValue={filters.maxBudget}
+          onChange={handlePriceRangeChange}
         />
       </div>
 

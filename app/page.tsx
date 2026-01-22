@@ -14,7 +14,8 @@ const initialFilters: SearchFilters = {
   adults: 2,
   children: 0,
   infants: 0,
-  maxBudget: null,
+  minBudget: 20,
+  maxBudget: 1000,
   dateMode: 'flexible',
   startDate: null,
   endDate: null,
@@ -37,8 +38,8 @@ function filterDestinations(filters: SearchFilters): Destination[] {
       return false;
     }
 
-    // Filter by budget
-    if (filters.maxBudget !== null && dest.priceFrom > filters.maxBudget) {
+    // Filter by budget range
+    if (dest.priceFrom < filters.minBudget || dest.priceFrom > filters.maxBudget) {
       return false;
     }
 

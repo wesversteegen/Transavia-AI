@@ -32,7 +32,8 @@ export interface SearchFilters {
   adults: number;
   children: number;
   infants: number;
-  maxBudget: number | null;
+  minBudget: number;
+  maxBudget: number;
   dateMode: 'precise' | 'flexible';
   startDate: Date | null;
   endDate: Date | null;
