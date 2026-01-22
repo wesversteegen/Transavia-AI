@@ -76,11 +76,13 @@ export default function Home() {
       <Header />
 
       <section className={styles.hero}>
-        <div className="container">
-          <h1 className={styles.title}>Where will your next adventure take you?</h1>
-          <p className={styles.subtitle}>
-            Tell us what you're looking for and we'll find the perfect destinations for your holiday
-          </p>
+        <div className={styles.heroContent}>
+          <div className="container">
+            <h1 className={styles.title}>Where will your next adventure take you?</h1>
+            <p className={styles.subtitle}>
+              Tell us what you're looking for and we'll find the perfect destinations for your holiday
+            </p>
+          </div>
         </div>
       </section>
 

@@ -5,7 +5,7 @@ export type RegionCluster =
   | 'nordic'
   | 'eastern-europe';
 
-export type TripType = 'popular' | 'art-culture' | 'beach' | 'mountains' | 'outdoor' | 'activities';
+export type TripType = 'sunny' | 'beach' | 'mountains' | 'city';
 
 export interface Region {
   id: RegionCluster;
