@@ -20,20 +20,21 @@
 
 .selectAll {
   font-size: 0.875rem;
-  color: var(--color-primary);
+  color: var(--color-navy-500);
   background: none;
   border: none;
   cursor: pointer;
   padding: var(--spacing-xs) var(--spacing-sm);
   border-radius: var(--radius-sm);
   transition: background-color 0.15s ease;
+  text-decoration: underline;
 
   &:hover {
-    background-color: rgba(0, 166, 81, 0.1);
+    background-color: var(--color-navy-50);
   }
 
   &:focus-visible {
-    outline: 2px solid var(--color-primary);
+    outline: 2px solid var(--color-neutral-900);
     outline-offset: 2px;
   }
 }
@@ -63,28 +64,27 @@
   gap: var(--spacing-xs);
   padding: var(--spacing-md);
   background-color: var(--color-surface);
-  border: 2px solid var(--color-border);
-  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-neutral-400);
+  border-radius: var(--radius-md);
   cursor: pointer;
   transition: all 0.15s ease;
   text-align: left;
 
   &:hover {
-    border-color: var(--color-primary);
-    box-shadow: var(--shadow-sm);
+    border-color: var(--color-neutral-800);
   }
 
   &:focus-visible {
-    outline: 2px solid var(--color-primary);
+    outline: 2px solid var(--color-neutral-900);
     outline-offset: 2px;
   }
 
   &.selected {
-    border-color: var(--color-primary);
-    background-color: rgba(0, 166, 81, 0.05);
+    border-color: var(--color-navy-500);
+    background-color: var(--color-navy-50);
 
     .regionName {
-      color: var(--color-primary);
+      color: var(--color-navy-500);
     }
   }
 }

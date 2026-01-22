@@ -32,23 +32,23 @@
   white-space: nowrap;
 
   &:hover {
-    border-color: var(--color-primary);
-    background-color: rgba(0, 166, 81, 0.05);
+    border-color: var(--color-navy-500);
+    background-color: var(--color-navy-50);
   }
 
   &:focus-visible {
-    outline: 2px solid var(--color-primary);
+    outline: 2px solid var(--color-neutral-900);
     outline-offset: 2px;
   }
 
   &.selected {
-    background-color: var(--color-primary);
-    border-color: var(--color-primary);
+    background-color: var(--color-navy-500);
+    border-color: var(--color-navy-500);
     color: white;
 
     &:hover {
-      background-color: var(--color-primary-dark);
-      border-color: var(--color-primary-dark);
+      background-color: var(--color-navy-600);
+      border-color: var(--color-navy-600);
     }
   }
 }

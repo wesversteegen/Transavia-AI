@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef } from 'react';
+import { Header } from '@/components/Header';
 import { SearchForm } from '@/components/SearchForm';
 import { ResultsGrid } from '@/components/Results';
 import { SearchFilters, Destination } from '@/types';
@@ -71,17 +72,7 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
-      <header className={styles.header}>
-        <div className={styles.headerContent}>
-          <div className={styles.logo}>
-            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M22 2L11 13" />
-              <path d="M22 2L15 22L11 13L2 9L22 2Z" />
-            </svg>
-            <span>Flight Inspiration</span>
-          </div>
-        </div>
-      </header>
+      <Header />
 
       <section className={styles.hero}>
         <div className="container">

@@ -13,8 +13,8 @@
 .modeToggle {
   display: inline-flex;
   background-color: var(--color-surface);
-  border: 1.5px solid var(--color-border);
-  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-neutral-400);
+  border-radius: var(--radius-full);
   overflow: hidden;
   width: fit-content;
 }
@@ -22,7 +22,7 @@
 .modeButton {
   padding: var(--spacing-sm) var(--spacing-lg);
   font-size: 0.875rem;
-  font-weight: 500;
+  font-weight: var(--font-weight-bold);
   color: var(--color-text-secondary);
   background: none;
   border: none;
@@ -30,16 +30,16 @@
   transition: all 0.15s ease;
 
   &:hover:not(.active) {
-    background-color: rgba(0, 0, 0, 0.03);
+    background-color: var(--color-neutral-100);
   }
 
   &.active {
-    background-color: var(--color-primary);
+    background-color: var(--color-navy-500);
     color: white;
   }
 
   &:focus-visible {
-    outline: 2px solid var(--color-primary);
+    outline: 2px solid var(--color-neutral-900);
     outline-offset: -2px;
   }
 }
@@ -56,17 +56,17 @@
   font-size: 0.9375rem;
   color: var(--color-text);
   background-color: var(--color-surface);
-  border: 1.5px solid var(--color-border);
-  border-radius: var(--radius-md);
+  border: 1px solid var(--color-neutral-400);
+  border-radius: var(--radius-sm);
   cursor: pointer;
   transition: all 0.15s ease;
 
   &:hover {
-    border-color: var(--color-primary);
+    border-color: var(--color-neutral-800);
   }
 
   &:focus-visible {
-    outline: 2px solid var(--color-primary);
+    outline: 2px solid var(--color-neutral-900);
     outline-offset: 2px;
   }
 
@@ -81,8 +81,8 @@
   left: 0;
   z-index: 100;
   background-color: var(--color-surface);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-neutral-300);
+  border-radius: var(--radius-md);
   box-shadow: var(--shadow-lg);
   padding: var(--spacing-md);
 
@@ -149,7 +149,7 @@
   color: var(--color-text-secondary);
 
   &:hover {
-    background-color: var(--color-background);
+    background-color: var(--color-neutral-100);
   }
 }
 
@@ -159,7 +159,7 @@
 }
 
 .headRow {
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-neutral-300);
 }
 
 .headCell {
@@ -188,42 +188,42 @@
   color: var(--color-text);
   border: none;
   background: none;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-sm);
   cursor: pointer;
   transition: all 0.15s ease;
 
   &:hover:not(:disabled) {
-    background-color: var(--color-background);
+    background-color: var(--color-neutral-100);
   }
 }
 
 .daySelected {
-  background-color: var(--color-primary) !important;
+  background-color: var(--color-navy-500) !important;
   color: white !important;
 }
 
 .dayToday {
   font-weight: 600;
-  border: 1px solid var(--color-primary);
+  border: 1px solid var(--color-navy-500);
 }
 
 .dayRangeMiddle {
-  background-color: rgba(0, 166, 81, 0.1);
+  background-color: var(--color-navy-50);
   border-radius: 0;
 }
 
 .dayRangeStart {
-  border-top-left-radius: var(--radius-md);
-  border-bottom-left-radius: var(--radius-md);
+  border-top-left-radius: var(--radius-sm);
+  border-bottom-left-radius: var(--radius-sm);
 }
 
 .dayRangeEnd {
-  border-top-right-radius: var(--radius-md);
-  border-bottom-right-radius: var(--radius-md);
+  border-top-right-radius: var(--radius-sm);
+  border-bottom-right-radius: var(--radius-sm);
 }
 
 .dayDisabled {
-  color: var(--color-border);
+  color: var(--color-neutral-400);
   cursor: not-allowed;
 }
 
@@ -232,16 +232,16 @@
   margin-top: var(--spacing-md);
   padding: var(--spacing-sm) var(--spacing-md);
   font-size: 0.9375rem;
-  font-weight: 600;
+  font-weight: var(--font-weight-bold);
   color: white;
-  background-color: var(--color-primary);
+  background-color: var(--color-fuchsia-500);
   border: none;
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-full);
   cursor: pointer;
   transition: background-color 0.15s ease;
 
   &:hover {
-    background-color: var(--color-primary-dark);
+    background-color: var(--color-fuchsia-600);
   }
 }
 
@@ -276,22 +276,22 @@
   font-size: 0.9375rem;
   color: var(--color-text);
   background-color: var(--color-surface);
-  border: 1.5px solid var(--color-border);
-  border-radius: var(--radius-md);
+  border: 1px solid var(--color-neutral-400);
+  border-radius: var(--radius-sm);
   cursor: pointer;
   appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236A6A6A' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 12px center;
   transition: border-color 0.15s ease;
 
   &:hover {
-    border-color: var(--color-primary);
+    border-color: var(--color-neutral-800);
   }
 
   &:focus {
     outline: none;
-    border-color: var(--color-primary);
-    box-shadow: 0 0 0 3px rgba(0, 166, 81, 0.15);
+    border-color: var(--color-neutral-800);
+    box-shadow: 0 0 0 1px var(--color-neutral-600);
   }
 }

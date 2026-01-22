@@ -4,42 +4,8 @@
   flex-direction: column;
 }
 
-.header {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  background-color: var(--color-surface);
-  border-bottom: 1px solid var(--color-border);
-}
-
-.headerContent {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: var(--spacing-md) var(--spacing-md);
-  max-width: 1280px;
-  margin: 0 auto;
-
-  @media (min-width: 768px) {
-    padding: var(--spacing-md) var(--spacing-lg);
-  }
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: var(--spacing-sm);
-  font-size: 1.125rem;
-  font-weight: 600;
-  color: var(--color-primary);
-
-  svg {
-    color: var(--color-primary);
-  }
-}
-
 .hero {
-  background: linear-gradient(135deg, var(--color-secondary) 0%, #2d3494 100%);
+  background: linear-gradient(135deg, var(--color-navy-500) 0%, var(--color-navy-600) 100%);
   padding: var(--spacing-2xl) 0;
   text-align: center;
 
@@ -80,7 +46,7 @@
 
 .formWrapper {
   background-color: var(--color-surface);
-  border-radius: var(--radius-xl);
+  border-radius: var(--radius-md);
   padding: var(--spacing-lg);
   box-shadow: var(--shadow-md);
 
@@ -106,7 +72,7 @@
 
 .footer {
   background-color: var(--color-surface);
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid var(--color-neutral-300);
   padding: var(--spacing-lg) 0;
   text-align: center;
 

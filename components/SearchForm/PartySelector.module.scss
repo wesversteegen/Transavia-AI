@@ -27,7 +27,7 @@
   justify-content: space-between;
   gap: var(--spacing-md);
   padding: var(--spacing-sm) 0;
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-neutral-300);
 
   @media (min-width: 480px) {
     flex-direction: column;
@@ -71,7 +71,7 @@
   justify-content: center;
   width: 36px;
   height: 36px;
-  border: 1.5px solid var(--color-border);
+  border: 1px solid var(--color-neutral-400);
   border-radius: 50%;
   background-color: var(--color-surface);
   color: var(--color-text);
@@ -79,12 +79,12 @@
   transition: all 0.15s ease;
 
   &:hover:not(:disabled) {
-    border-color: var(--color-primary);
-    color: var(--color-primary);
+    border-color: var(--color-neutral-800);
+    color: var(--color-navy-500);
   }
 
   &:focus-visible {
-    outline: 2px solid var(--color-primary);
+    outline: 2px solid var(--color-neutral-900);
     outline-offset: 2px;
   }
 
