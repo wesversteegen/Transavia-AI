@@ -9,12 +9,13 @@ interface RegionSelectorProps {
   onChange: (regions: RegionCluster[]) => void;
 }
 
-const regionIcons: Record<RegionCluster, string> = {
-  'western-europe': '🇫🇷',
-  'southern-europe': '🇪🇸',
-  'central-europe': '🇩🇪',
-  'nordic': '🇸🇪',
-  'eastern-europe': '🇵🇱',
+// Atmospheric images representing each region's vibe
+const regionImages: Record<RegionCluster, string> = {
+  'western-europe': 'https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=400&q=80', // Paris/Eiffel
+  'southern-europe': 'https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?w=400&q=80', // Mediterranean coast
+  'central-europe': 'https://images.unsplash.com/photo-1519677100203-a0e668c92439?w=400&q=80', // Alpine village
+  'nordic': 'https://images.unsplash.com/photo-1507272931001-fc06c17e4f43?w=400&q=80', // Northern lights/fjords
+  'eastern-europe': 'https://images.unsplash.com/photo-1541343672885-9be56236302a?w=400&q=80', // Budapest Parliament
 };
 
 export function RegionSelector({ selected, onChange }: RegionSelectorProps) {
@@ -56,12 +57,17 @@ export function RegionSelector({ selected, onChange }: RegionSelectorProps) {
             onClick={() => handleToggle(region.id)}
             aria-pressed={selected.includes(region.id)}
           >
-            <span className={styles.regionIcon}>{regionIcons[region.id]}</span>
-            <span className={styles.regionName}>{region.name}</span>
-            <span className={styles.countries}>
-              {region.countries.slice(0, 3).join(', ')}
-              {region.countries.length > 3 && '...'}
-            </span>
+            <div
+              className={styles.regionImage}
+              style={{ backgroundImage: `url(${regionImages[region.id]})` }}
+            />
+            <div className={styles.regionContent}>
+              <span className={styles.regionName}>{region.name}</span>
+              <span className={styles.countries}>
+                {region.countries.slice(0, 3).join(', ')}
+                {region.countries.length > 3 && '...'}
+              </span>
+            </div>
           </button>
         ))}
       </div>

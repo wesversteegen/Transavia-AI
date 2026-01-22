@@ -2,7 +2,7 @@
 
 import { tripTypeLabels } from '@/data/mockData';
 import { TripType } from '@/types';
-import { ChipGroup } from '../ui/ChipGroup';
+import styles from './TripTypeSelector.module.scss';
 
 interface TripTypeSelectorProps {
   selected: TripType[];
@@ -10,29 +10,32 @@ interface TripTypeSelectorProps {
 }
 
 export function TripTypeSelector({ selected, onChange }: TripTypeSelectorProps) {
-  const options = (Object.keys(tripTypeLabels) as TripType[]).map((key) => ({
-    value: key,
-    label: tripTypeLabels[key].label,
-    icon: tripTypeLabels[key].icon,
-  }));
+  const types = Object.keys(tripTypeLabels) as TripType[];
+
+  const handleToggle = (type: TripType) => {
+    if (selected.includes(type)) {
+      onChange(selected.filter((t) => t !== type));
+    } else {
+      onChange([...selected, type]);
+    }
+  };
 
   return (
-    <div>
-      <label style={{
-        display: 'block',
-        fontSize: '1rem',
-        fontWeight: 600,
-        marginBottom: '12px',
-        color: 'var(--color-text)'
-      }}>
-        What type of holiday?
-      </label>
-      <ChipGroup
-        options={options}
-        selected={selected}
-        onChange={(values) => onChange(values as TripType[])}
-        multiSelect={true}
-      />
+    <div className={styles.tripTypeSelector}>
+      <label className={styles.label}>What type of holiday?</label>
+      <div className={styles.tabs}>
+        {types.map((type) => (
+          <button
+            key={type}
+            type="button"
+            className={`${styles.tab} ${selected.includes(type) ? styles.selected : ''}`}
+            onClick={() => handleToggle(type)}
+            aria-pressed={selected.includes(type)}
+          >
+            {tripTypeLabels[type].label}
+          </button>
+        ))}
+      </div>
     </div>
   );
 }

@@ -41,37 +41,28 @@
 
 .regions {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--spacing-sm);
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-md);
 
   @media (min-width: 480px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media (min-width: 768px) {
     grid-template-columns: repeat(3, 1fr);
-  }
-
-  @media (min-width: 1024px) {
-    grid-template-columns: repeat(5, 1fr);
   }
 }
 
 .region {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: var(--spacing-xs);
-  padding: var(--spacing-md);
+  overflow: hidden;
   background-color: var(--color-surface);
-  border: 1px solid var(--color-neutral-400);
-  border-radius: var(--radius-md);
+  border: 2px solid transparent;
+  border-radius: var(--radius-lg);
   cursor: pointer;
-  transition: all 0.15s ease;
-  text-align: center;
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow-sm);
 
   &:hover {
-    border-color: var(--color-neutral-800);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
   }
 
   &:focus-visible {
@@ -81,7 +72,6 @@
 
   &.selected {
     border-color: var(--color-brand-green);
-    background-color: var(--color-green-50);
 
     .regionName {
       color: var(--color-green-700);
@@ -89,19 +79,40 @@
   }
 }
 
-.regionIcon {
-  font-size: 2rem;
-  line-height: 1;
+.regionImage {
+  width: 100%;
+  height: 80px;
+  background-size: cover;
+  background-position: center;
+
+  @media (min-width: 480px) {
+    height: 100px;
+  }
+}
+
+.regionContent {
+  padding: var(--spacing-sm) var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
 .regionName {
-  font-size: 0.9375rem;
+  font-size: 0.875rem;
   font-weight: 600;
   color: var(--color-text);
+
+  @media (min-width: 480px) {
+    font-size: 0.9375rem;
+  }
 }
 
 .countries {
-  font-size: 0.75rem;
+  font-size: 0.6875rem;
   color: var(--color-text-secondary);
   line-height: 1.4;
+
+  @media (min-width: 480px) {
+    font-size: 0.75rem;
+  }
 }

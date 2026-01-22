@@ -23,7 +23,7 @@ export function DestinationCard({ destination }: DestinationCardProps) {
         <div className={styles.badges}>
           {destination.tripTypes.slice(0, 2).map((type) => (
             <span key={type} className={styles.badge}>
-              {tripTypeLabels[type].icon} {tripTypeLabels[type].label}
+              {tripTypeLabels[type].label}
             </span>
           ))}
         </div>
