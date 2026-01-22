@@ -40,7 +40,7 @@
   transition: background-color 0.15s ease;
 
   &.inRange {
-    background-color: var(--color-fuchsia-500);
+    background-color: #00AB61;
   }
 }
 
@@ -57,7 +57,7 @@
   left: 12px;
   right: 12px;
   height: 2px;
-  background-color: var(--color-fuchsia-500);
+  background-color: var(--color-neutral-300);
   transform: translateY(-50%);
   border-radius: 1px;
 }
@@ -65,7 +65,7 @@
 .range {
   position: absolute;
   height: 100%;
-  background-color: var(--color-fuchsia-500);
+  background-color: #00AB61;
 }
 
 .thumb {
@@ -88,7 +88,7 @@
 
   &:focus {
     outline: none;
-    box-shadow: 0 0 0 3px var(--color-fuchsia-100), 0 2px 6px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 0 3px rgba(0, 171, 97, 0.2), 0 2px 6px rgba(0, 0, 0, 0.15);
   }
 
   &.active {
